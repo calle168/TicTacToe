@@ -1,8 +1,6 @@
-// Reset board
+// Remove all the X's/O's from the game board.
 $(".cell").removeClass("marked_x").removeClass("marked_o");
 
-// Fetch player name
+// Fetch player name and print status.
 var current_player_name = $("#player<%= @current_player %>_name").text();
-
-// Print status text
 $("#status_field").text("Okay, lets play! " + current_player_name + " is first out.")

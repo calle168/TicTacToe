@@ -2,7 +2,7 @@ require 'tictactoe'
 
 class GameController < ApplicationController
 
-    # Class parameters
+    # Global class parameters
      @@tic_tac_toe_game
      @@game_on = false
 
@@ -10,7 +10,6 @@ class GameController < ApplicationController
     def index
     end
 
-    # 
     def new
     end
 
@@ -20,7 +19,7 @@ class GameController < ApplicationController
         @player1_name = params[:player1_name].to_s
         @player2_name = params[:player2_name].to_s
 
-        # Create new game and mark flag
+        # Create new game and mark flag as game on
         @@tic_tac_toe_game = TicTacToeGame.new()
         @@game_on = true
     end
@@ -30,7 +29,7 @@ class GameController < ApplicationController
         @valid_move = false
         return if !@@game_on
 
-        # Get parameters
+        # Get parameters for the view.
         @next_player = @@tic_tac_toe_game.current_player
         @x = params[:x].to_i
         @y = params[:y].to_i
