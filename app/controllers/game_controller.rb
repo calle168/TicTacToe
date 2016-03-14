@@ -4,13 +4,14 @@ class GameController < ApplicationController
 
     # Global class parameters
      @@tic_tac_toe_game
-     @@game_on = false
+     @@game_on
 
     # Index aka Home
     def index
     end
 
     def new
+        @@game_on = false
     end
 
     # Create new game with parameters from modal
