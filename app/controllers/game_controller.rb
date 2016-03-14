@@ -6,19 +6,26 @@ class GameController < ApplicationController
      @@tic_tac_toe_game
      @@game_on = false
 
+    # Index aka Home
     def index
     end
 
+    # 
     def new
+    end
+
+    # Create new game with parameters from modal
+    def create
         # Fetch parameters from form and send them to view.
         @player1_name = params[:player1_name].to_s
         @player2_name = params[:player2_name].to_s
 
-        # Create game and turn on game.
-        @@game_on = true
+        # Create new game and mark flag
         @@tic_tac_toe_game = TicTacToeGame.new()
+        @@game_on = true
     end
 
+    # Make a move on cell with parameters x and y
     def move
         @valid_move = false
         return if !@@game_on

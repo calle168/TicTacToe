@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'game/index'
+  # get 'game/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get 'game', to: 'game#index'
   post 'game/move', to: 'game#move'
   post 'game/reset', to: 'game#reset'
-  post 'game/new', to: 'game#new'
+  get 'game/new', to: 'game#new'
+  post 'game/create', to: 'game#create'
 
 
   # Example of regular route:

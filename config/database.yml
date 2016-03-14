@@ -21,13 +21,17 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  host: localhost
+  username: carlrygart
+  password:
 
 development:
   adapter: postgresql
   encoding: utf8
   database: project_development
   pool: 5
-  username: 
+  host: localhost
+  username: carlrygart
   password:
 
 test: &TEST
@@ -35,7 +39,8 @@ test: &TEST
   encoding: utf8
   database: project_test
   pool: 5
-  username: 
+  host: localhost
+  username: carlrygart
   password:
 
 production:
@@ -43,5 +48,6 @@ production:
   encoding: utf8
   database: project_production
   pool: 5
-  username: 
+  host: localhost
+  username: carlrygart
   password:

@@ -1,0 +1,41 @@
+<script>
+$(document).ready(function(){
+    $('#name_modal').modal('show');
+});
+</script>
+
+<div class="container hero-unit">
+    <div class="row center">
+      <button type="button" class="btn btn-default btn-lg" id="testtest" data-toggle="modal" data-target="#name_modal">New Game</button>
+        <%= link_to "Reset Board", game_reset_path, class: 'btn btn-default btn-lg', id: 'reset_game', remote: true, method: :post %>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3 center">
+            <div class="panel panel-info">
+                <div class="panel-heading"><p id="status_field"><b>Click on New Game to begin!</b></p></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="left-sidebar" class="col-xs-offset-2 col-xs-2">
+            <%= render 'sidebar', nbr: 1, pic: 'x.png' %>
+        </div>
+        <div id="main-content" class="col-xs-4 center">
+          <div class="square-grid" id="game_table">
+            <% (0..2).each do |row| %>
+                <% (0..2).each do |col| %>
+                <div class='square-grid__cell square-grid__cell--3'>
+                    <%= link_to game_move_path(x: "#{row}", y: "#{col}"), class: "cell square-grid__content", id: "cell_#{row}#{col}", remote: true, method: :post do %>
+                    <% end %>
+                </div>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div id="right-sidebar" class="col-xs-2">
+            <%= render 'sidebar', nbr: 2, pic: 'o.png' %>
+        </div>
+    </div>
+</div>
+
+<%= render 'modal' %>
