@@ -1,0 +1,95 @@
+// Place all the styles related to the game controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+th, td {
+    border: 1px dashed black;
+}
+
+td a:hover {
+    background-color: #f5f5f5;
+}
+
+.center {
+    text-align: center;
+}
+
+table #game_table {
+    margin-top: 15px;
+}
+
+.panel {
+    margin-top: 20px;
+}
+
+#status_field {
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+#tictactoe-logo {
+    float: left;
+    margin-right: 10px;
+    margin-left: 20px;
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 15px;
+    font-weight: bold;
+
+    :hover {
+        color: white;
+    }
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.marked_x {
+    background-image: image-url("x.png");
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.marked_o {
+    background-image: image-url("o.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+td a {
+    width:100px;
+    height:100px;
+    display:block;
+    text-decoration: none;
+}
+
+
+  /* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #222;
+  color: #777;
+  padding-top: 10px;
+  border-radius: 4px;
+}

@@ -1,0 +1,23 @@
+<% return if @valid_move == false %>
+
+// Put an X/O in the right cell.
+<% if @next_player == 2 %>
+    $("#cell_<%= @x %><%= @y %>").addClass("marked_x");
+<% else %>
+    $("#cell_<%= @x %><%= @y %>").addClass("marked_o");
+<% end %>
+
+// Write out text in status field.
+<% if @winner == 0 %>
+    var next_player_name = $("#player<%= @next_player %>_name").text();
+    $("#status_field").text("Nice move! Now it's " + next_player_name + "'s turn.");
+<% elsif @winner == 3 %>
+    $("#status_field").text("It's a tie! Reset board to play again.");
+<% else %>
+    var winner_name = $("#player<%= @winner %>_name").text();
+    $("#status_field").text("The winner is " + winner_name + ". Reset board to play again.");
+
+    // Fetch history from client and write out the new value.
+    var score = parseInt($("#player<%= @winner %>_score").text());
+    $("#player<%= @winner %>_score").text(score+1);
+<% end %>
