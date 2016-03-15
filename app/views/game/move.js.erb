@@ -2,9 +2,9 @@
 
 // Put an X/O in the right cell.
 <% if @next_player == 2 %>
-    $("#cell_<%= @x %><%= @y %>").addClass("marked_x");
+    $("#cell_<%= @x %><%= @y %>").addClass("marked_x").addClass("disabled");
 <% else %>
-    $("#cell_<%= @x %><%= @y %>").addClass("marked_o");
+    $("#cell_<%= @x %><%= @y %>").addClass("marked_o").addClass("disabled");
 <% end %>
 
 // Write out text in status field.

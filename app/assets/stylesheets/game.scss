@@ -83,6 +83,10 @@
     background-position: center;
 }
 
+a.disabled {
+    pointer-events: none;
+}
+
 /* Misc styles */
 .center {
     text-align: center;

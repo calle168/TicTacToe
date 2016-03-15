@@ -2,7 +2,7 @@
 $("#status_field").text("Okay, lets play! <%= @player1_name %> is first out.");
 
 // Remove all the X's/O's from the board.
-$(".cell").removeClass("marked_x").removeClass("marked_o");
+$(".cell").removeClass("marked_x").removeClass("marked_o").removeClass("disabled");
 
 // Reset score in the sidebars.
 $(".score").text(0);
